@@ -1,5 +1,5 @@
 #!/bin/bash
-
+export PYTHONPATH=$(pwd)/src:$PYTHONPATH
 
 seed=0
 gr=VAE
@@ -9,7 +9,6 @@ graph=RD
 walk_repeats=50
 scalfactor=1.0
 klw=0.01
-lm=None
 
 python -m src.experiments.run_sampling_strategies \
     --seed $seed \
@@ -20,5 +19,4 @@ python -m src.experiments.run_sampling_strategies \
     --graph $graph \
     --walk-repeats $walk_repeats \
     --scalfactor $scalfactor \
-    --klw $klw \
-    --lm $lm
+    --klw $klw
