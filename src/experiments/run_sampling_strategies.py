@@ -20,7 +20,7 @@ from tqdm import tqdm
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-
+import tasks
 from src.core.goal_reducer.models import GoalReducer, VAEGoalReducer
 from src.envs.state_graphs import (
     SamplingStrategy,
