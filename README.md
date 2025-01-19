@@ -1,5 +1,3 @@
-Aquí tienes el archivo completo en formato Markdown listo para copiar y pegar:  
-
 # Goal Reduction with Loop-Removal Accelerates RL and Models Human Brain Activity in Goal-Directed Learning
 
 This repository reproduces the results from the paper:
