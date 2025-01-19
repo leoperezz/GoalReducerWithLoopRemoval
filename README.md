@@ -1,3 +1,6 @@
+Aquí tienes el archivo completo en formato Markdown listo para copiar y pegar:  
+
+```markdown
 # Goal Reduction with Loop-Removal Accelerates RL and Models Human Brain Activity in Goal-Directed Learning
 
 This repository reproduces the results from the paper:
@@ -35,6 +38,20 @@ chmod +x scripts/run_sampling_strategies/train.sh
 ./scripts/run_sampling_strategies/train.sh
 ```
 
+Below is the visualization of the results obtained during training:
+
+![Training Results](results.main/sampling_strategy_comparison/VAE/fig-RandomSG.png)
+
+**Parameters used:**
+- `seed=0`
+- `gr=VAE`
+- `lr=5e-4`
+- `cores=8`
+- `graph=RD`
+- `walk_repeats=50`
+- `scalfactor=1.0`
+- `klw=0.01`
+
 #### Step 2: Visualization
 
 After training, you can visualize the results by running the analysis script:
@@ -43,4 +60,13 @@ chmod +x scripts/run_sampling_strategies/analyze.sh
 ./scripts/run_sampling_strategies/analyze.sh
 ```
 
----
+Below is the visualization of the analyzed data:
+
+![Analysis Results](results.main/sampling_strategy_comparison/VAE/fig-RandomSG-Recursive-2D-.png)
+
+**Parameters used:**
+- `seed=0`
+- `gr=VAE`
+- `graph=RD`
+- `klw=0.01`
+``` 
