@@ -6,6 +6,14 @@ src/envs/__pycache__/
 src/experiments/__pycache__/
 src/utils/__pycache__/
 src/tasks/__pycache__/
+src/tasks/minigrids/__pycache__/
+src/tasks/miniwords/__pycache__/
+src/tasks/robotarm/__pycache__/
+src/tasks/treasure_hunting/__pycache__/
+src/core/visualization/__pycache__/
+src/core/policy/__pycache__/
+
+
 
 # data
 results.main/sampling_strategy_comparison/VAE/data/
