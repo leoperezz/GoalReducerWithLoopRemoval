@@ -2,6 +2,7 @@
 - different sizes of gridworlds
 - different golsav2 policies
 """
+import tasks
 import copy
 import itertools
 import platform
