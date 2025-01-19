@@ -15,8 +15,8 @@ import itertools
 # from state_graphs import remove_loops
 
 
-from golsa_base import PolicyBase, fd_lst_norepeat_val
-from visualization import visualize_gw_training_status
+from src.core.policy.golsa_base import PolicyBase, fd_lst_norepeat_val
+from src.core.visualization import visualize_gw_training_status
 
 
 def remove_loops(arr):

@@ -9,15 +9,15 @@ import matplotlib.pyplot as plt
 import numpy as np
 import torch
 import torch.nn.functional as F
-from golsa_base import EpMemSamplingStrategy, PolicyBase, max_st_noise_scales
+from src.core.policy.golsa_base import EpMemSamplingStrategy, PolicyBase, max_st_noise_scales
 from minigrid.core.constants import DIR_TO_VEC
 from src.utils.policy_utils import policy_entropy
 #En caso exista algún error de importe circular, debemos de separar esta función
 from src.experiments.run_sampling_strategies import analyze_optimality
 from src.envs.state_graphs import FourRoomSG, SamplingStrategy
 from tianshou.data import Batch, ReplayBuffer
-from utils import get_RDM
-from visualization import (
+from src.utils.utils import get_RDM
+from src.core.visualization import (
     visualize_act_dist_entropy,
     visualize_gridworld_place_cells,
     visualize_gw_training_status,
