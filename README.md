@@ -68,4 +68,3 @@ Below is the visualization of the analyzed data:
 - `gr=VAE`
 - `graph=RD`
 - `klw=0.01`
-``` 
