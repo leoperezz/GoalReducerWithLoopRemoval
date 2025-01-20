@@ -23,7 +23,7 @@ qh_dim=128
 max_steps=140
 epochs=40
 
-policy="DQL"  
+policy="DQL"       # DQL, DQLG, NonRL
 subgoal_on=False  
 planning=True  
 sampling_strategy=4  

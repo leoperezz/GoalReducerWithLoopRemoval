@@ -13,7 +13,5 @@ src/tasks/treasure_hunting/__pycache__/
 src/core/visualization/__pycache__/
 src/core/policy/__pycache__/
 
-
-
 # data
 results.main/sampling_strategy_comparison/VAE/data/
