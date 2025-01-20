@@ -23,6 +23,11 @@ Ensure you have Python installed and install the required dependencies:
 pip install -r requirements.txt
 ```
 
+Compile the code:
+```bash
+bash src/core/policy/compile.sh
+```
+
 ## Reproducing Results
 
 ### Figure 2: Training and Visualization
@@ -49,7 +54,7 @@ Below is the visualization of the results obtained during training:
 - `scalfactor=1.0`
 - `klw=0.01`
 
-#### Step 2: Visualization
+#### Step 2: Train and visualization of different sampling strategies
 
 After training, you can visualize the results by running the analysis script:
 ```bash
@@ -66,3 +71,21 @@ Below is the visualization of the analyzed data:
 - `gr=VAE`
 - `graph=RD`
 - `klw=0.01`
+
+#### Step 3: Train the policy
+
+Make the training script executable and run it. You should change the parameters in the script:
+```bash
+chmod +x scripts/run_gridworld/train.sh
+./scripts/run_gridworld/train.sh
+```
+
+All the experiments are in the `scripts/run_*` folder.
+
+#### Step 4: Inference
+
+Make the inference script executable and run it. You should change the parameters in the script:
+```bash
+chmod +x scripts/run_gridworld/inference.sh
+./scripts/run_gridworld/inference.sh
+```
