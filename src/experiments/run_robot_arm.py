@@ -17,7 +17,7 @@ import torch
 from src.core.policy.golsav2_continuous import GOLSAv2DDPG
 from src.core.goal_reducer.models import GoalReducer
 from tianshou.utils.net.common import MLP
-from utils import before_run, stdout_redirected
+from src.utils.utils import before_run, stdout_redirected
 
 torch.set_printoptions(sci_mode=False)
 matplotlib.use("agg")
@@ -39,6 +39,7 @@ def create_golsa_DDPG_policy(
     target_update_freq=320,
     device="cpu",
 ):
+    env = env.unwrapped
     action_shape = env.action_space.shape or env.action_space.n
 
     from typing import Any, Dict, Optional, Tuple, Union
@@ -252,6 +253,7 @@ def train_model(
             max_steps=max_steps,
             init_noise_scale=init_noise_scale,
         )
+        env = env.unwrapped
 
         train_envs = ts.env.SubprocVectorEnv(
             [
@@ -320,16 +322,16 @@ def train_model(
     train_collector = ts.data.Collector(policy, train_envs, vbuf, exploration_noise=True)
     test_collector = ts.data.Collector(policy, test_envs, exploration_noise=True)
 
-    with torch.no_grad():
-        robotarm_reach_data_all = torch.load("local_data/.robotarm_reach_data_all.pt").float().to(DEVICE)
-        s_combined = robotarm_reach_data_all[:, :6]
-        g_combined = robotarm_reach_data_all[:, 6:-1]
-        dis_all = robotarm_reach_data_all[:, -1]
+    # with torch.no_grad():
+    #     robotarm_reach_data_all = torch.load("local_data/.robotarm_reach_data_all.pt").float().to(DEVICE)
+    #     s_combined = robotarm_reach_data_all[:, :6]
+    #     g_combined = robotarm_reach_data_all[:, 6:-1]
+    #     dis_all = robotarm_reach_data_all[:, -1]
 
-        good_indices = torch.where(dis_all > 0)[0]
-        g_combined = g_combined[good_indices]
-        s_combined = s_combined[good_indices]
-        dis_all = dis_all[good_indices]
+    #     good_indices = torch.where(dis_all > 0)[0]
+    #     g_combined = g_combined[good_indices]
+    #     s_combined = s_combined[good_indices]
+    #     dis_all = dis_all[good_indices]
 
     def after_train(epoch, env_step):
         # policy.set_eps(0.05)
@@ -342,9 +344,9 @@ def train_model(
 
             policy.analyze(
                 env,
-                s_combined,
-                g_combined,
-                dis_all,
+                # s_combined,
+                # g_combined,
+                # dis_all,
                 # all_possible_img_inputs,
                 # shortest_distance_state_goal_pairs,
                 # all_possible_idx,

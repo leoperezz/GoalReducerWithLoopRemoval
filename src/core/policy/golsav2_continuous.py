@@ -12,7 +12,7 @@ import torch
 from tianshou.data import Batch, ReplayBuffer
 from tianshou.exploration import BaseNoise, GaussianNoise
 from torch.distributions import Independent, Normal
-from golsa_base import PolicyBase, fd_lst_norepeat_val
+from src.core.policy.golsa_base import PolicyBase, fd_lst_norepeat_val
 from src.utils.state_graphs_utils import remove_loops_j  # ,remove_loops
 from c_utils import remove_loops, gen_ind_res
 import matplotlib.pyplot as plt
@@ -521,9 +521,9 @@ class GOLSAv2DDPG(PolicyBase):
     def analyze(
         self,
         env,
-        s_combined: torch.Tensor,
-        g_combined: torch.Tensor,
-        dis_all: torch.Tensor,
+        # s_combined: torch.Tensor,
+        # g_combined: torch.Tensor,
+        # dis_all: torch.Tensor,
         # all_possible_img_inputs,
         # shortest_distance_state_goal_pairs,
         # all_possible_idx,
